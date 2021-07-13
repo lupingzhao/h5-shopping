@@ -56,7 +56,9 @@
             <van-button type="primary" class="foot-btn" @click="login"
               >登陆</van-button
             >
-            <van-button type="danger" class="foot-btn">注册</van-button>
+            <van-button type="danger" class="foot-btn" @click="register"
+              >注册</van-button
+            >
           </div>
         </van-form>
       </div>
@@ -85,33 +87,14 @@ export default {
       verify: null,
       // 手机验证规则
       pattern: /^(?:(?:\+|00)86)?1\d{10}$/,
-      islogin: false,
+      error: false,
     };
   },
   components: { HeadChild },
   methods: {
-    // 验证码
-    getAverify() {
-      this.$api
-        .getAverify()
-        .then((res) => {
-          // console.log(res);
-          this.code = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    // 返回
-    back() {
-      this.$router.back();
-    },
+    // 登陆
     login() {
-      this.islogin = true;
-    },
-    // 表单校验是否通过 通过才触发
-    onSubmit(values) {
-      if (this.islogin) {
+      if (this.error) {
         this.$api
           .login({
             nickname: this.nickname,
@@ -119,7 +102,7 @@ export default {
             verify: this.verify,
           })
           .then((res) => {
-            // console.log(res);
+            console.log(res);
 
             if (res.code === 200) {
               // 成功通知
@@ -134,10 +117,14 @@ export default {
             }
           })
           .catch((err) => {
-            // console.log(err);
+            console.log(err);
             Notify({ type: "success", message: err.msg, duration: 1000 });
           });
-      } else {
+      }
+    },
+    // 注册
+    register() {
+      if (this.error) {
         this.$api
           .register({
             nickname: this.nickname,
@@ -164,7 +151,26 @@ export default {
             console.log(err);
           });
       }
-
+    },
+    // 验证码
+    getAverify() {
+      this.$api
+        .getAverify()
+        .then((res) => {
+          // console.log(res);
+          this.code = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    // 返回
+    back() {
+      this.$router.back();
+    },
+    // 表单校验是否通过 通过才触发
+    onSubmit(values) {
+      this.error = true;
       // console.log(values);
     },
   },

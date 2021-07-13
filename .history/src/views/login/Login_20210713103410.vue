@@ -53,7 +53,7 @@
             <div v-html="code" class="code" @click="getAverify"></div>
           </div>
           <div>
-            <van-button type="primary" class="foot-btn" @click="login"
+            <van-button type="primary" class="foot-btn" @click="islogin"
               >登陆</van-button
             >
             <van-button type="danger" class="foot-btn">注册</van-button>
@@ -85,11 +85,67 @@ export default {
       verify: null,
       // 手机验证规则
       pattern: /^(?:(?:\+|00)86)?1\d{10}$/,
-      islogin: false,
+      error: false,
     };
   },
   components: { HeadChild },
   methods: {
+    // 登陆
+    login() {
+      this.$api
+        .login({
+          nickname: this.nickname,
+          password: this.password,
+          verify: this.verify,
+        })
+        .then((res) => {
+          console.log(res);
+
+          if (res.code === 200) {
+            // 成功通知
+            Notify({ type: "success", message: res.msg, duration: 1000 });
+            this.$router.push("/My");
+            // 本地储存用户名
+            this.$store.commit("setNickname", this.nickname);
+            localStorage.setItem("nickname", this.nickname);
+            localStorage.setItem("userInfo", JSON.stringify(res.userInfo));
+          } else {
+            this.$Toast(res.msg);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          Notify({ type: "success", message: err.msg, duration: 1000 });
+        });
+    },
+    // 注册
+    register() {
+      this.$api
+        .register({
+          nickname: this.nickname,
+          password: this.password,
+          verify: this.verify,
+        })
+        .then((res) => {
+          if (res.data.code === 200) {
+            Notify({ type: "success", message: res.msg, duration: 1000 });
+            this.$router.push("/My");
+            // 本地储存用户名
+            this.$store.commit("setNickname", this.nickname);
+            localStorage.setItem("nickname", this.nickname);
+          } else {
+            Notify({
+              message: "err.msg",
+              color: "#ad0000",
+              background: "rgb(86, 86, 87)",
+              duration: 1000,
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     // 验证码
     getAverify() {
       this.$api
@@ -106,65 +162,8 @@ export default {
     back() {
       this.$router.back();
     },
-    login() {
-      this.islogin = true;
-    },
     // 表单校验是否通过 通过才触发
     onSubmit(values) {
-      if (this.islogin) {
-        this.$api
-          .login({
-            nickname: this.nickname,
-            password: this.password,
-            verify: this.verify,
-          })
-          .then((res) => {
-            // console.log(res);
-
-            if (res.code === 200) {
-              // 成功通知
-              Notify({ type: "success", message: res.msg, duration: 1000 });
-              this.$router.push("/My");
-              // 本地储存用户名
-              this.$store.commit("setNickname", this.nickname);
-              localStorage.setItem("nickname", this.nickname);
-              localStorage.setItem("userInfo", JSON.stringify(res.userInfo));
-            } else {
-              this.$Toast(res.msg);
-            }
-          })
-          .catch((err) => {
-            // console.log(err);
-            Notify({ type: "success", message: err.msg, duration: 1000 });
-          });
-      } else {
-        this.$api
-          .register({
-            nickname: this.nickname,
-            password: this.password,
-            verify: this.verify,
-          })
-          .then((res) => {
-            if (res.data.code === 200) {
-              Notify({ type: "success", message: res.msg, duration: 1000 });
-              this.$router.push("/My");
-              // 本地储存用户名
-              this.$store.commit("setNickname", this.nickname);
-              localStorage.setItem("nickname", this.nickname);
-            } else {
-              Notify({
-                message: "err.msg",
-                color: "#ad0000",
-                background: "rgb(86, 86, 87)",
-                duration: 1000,
-              });
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }
-
       // console.log(values);
     },
   },

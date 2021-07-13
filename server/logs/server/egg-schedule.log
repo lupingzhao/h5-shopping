@@ -208,3 +208,9 @@
 2021-07-12 15:59:56,117 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 45003887ms at 2021-07-13 04:30:00.003
 2021-07-12 15:59:56,117 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 28803883ms at 2021-07-13 00:00:00.000
 2021-07-12 15:59:56,118 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 28804883ms at 2021-07-13 00:00:01.001
+2021-07-13 08:13:56,300 INFO 14472 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2021-07-13 08:13:56,300 INFO 14472 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js
+2021-07-13 08:13:56,300 INFO 14472 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2021-07-13 08:13:56,894 INFO 14708 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 72963109ms at 2021-07-14 04:30:00.003
+2021-07-13 08:13:56,895 INFO 14708 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 56763106ms at 2021-07-14 00:00:00.001
+2021-07-13 08:13:56,895 INFO 14708 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 56764105ms at 2021-07-14 00:00:01.000

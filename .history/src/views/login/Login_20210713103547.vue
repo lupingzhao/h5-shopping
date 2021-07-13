@@ -53,7 +53,7 @@
             <div v-html="code" class="code" @click="getAverify"></div>
           </div>
           <div>
-            <van-button type="primary" class="foot-btn" @click="login"
+            <van-button type="primary" class="foot-btn" @click="islogin"
               >登陆</van-button
             >
             <van-button type="danger" class="foot-btn">注册</van-button>
@@ -90,6 +90,36 @@ export default {
   },
   components: { HeadChild },
   methods: {
+    // 登陆
+    login() {},
+    // 注册
+    register() {
+      this.$api
+        .register({
+          nickname: this.nickname,
+          password: this.password,
+          verify: this.verify,
+        })
+        .then((res) => {
+          if (res.data.code === 200) {
+            Notify({ type: "success", message: res.msg, duration: 1000 });
+            this.$router.push("/My");
+            // 本地储存用户名
+            this.$store.commit("setNickname", this.nickname);
+            localStorage.setItem("nickname", this.nickname);
+          } else {
+            Notify({
+              message: "err.msg",
+              color: "#ad0000",
+              background: "rgb(86, 86, 87)",
+              duration: 1000,
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     // 验证码
     getAverify() {
       this.$api
@@ -106,7 +136,7 @@ export default {
     back() {
       this.$router.back();
     },
-    login() {
+    islogin() {
       this.islogin = true;
     },
     // 表单校验是否通过 通过才触发
@@ -119,7 +149,7 @@ export default {
             verify: this.verify,
           })
           .then((res) => {
-            // console.log(res);
+            console.log(res);
 
             if (res.code === 200) {
               // 成功通知
@@ -134,7 +164,7 @@ export default {
             }
           })
           .catch((err) => {
-            // console.log(err);
+            console.log(err);
             Notify({ type: "success", message: err.msg, duration: 1000 });
           });
       } else {
