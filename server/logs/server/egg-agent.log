@@ -507,3 +507,41 @@ hostname: Trayvon
 2021-07-09 19:58:25,107 INFO 4276 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"
 2021-07-09 19:58:25,107 INFO 4276 [egg-watcher:agent] watcher start success
 2021-07-09 19:58:25,127 INFO 4276 [egg:core] dump config after ready, 10ms
+2021-07-12 08:54:15,384 INFO 428 [egg:logger] init all loggers with options: {"dir":"D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-07-12 08:54:15,389 INFO 428 [egg:core] dump config after load, 3ms
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: ["D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"]
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app"
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config"
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks"
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy"
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"
+2021-07-12 08:54:15,440 INFO 428 [egg-watcher:agent] watcher start success
+2021-07-12 08:54:15,453 INFO 428 [egg:core] dump config after ready, 5ms
+2021-07-12 15:57:12,888 INFO 12808 [egg:logger] init all loggers with options: {"dir":"D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-07-12 15:57:12,894 INFO 12808 [egg:core] dump config after load, 3ms
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: ["D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"]
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app"
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config"
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks"
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy"
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"
+2021-07-12 15:57:12,929 INFO 12808 [egg-watcher:agent] watcher start success
+2021-07-12 15:57:12,939 INFO 12808 [egg:core] dump config after ready, 4ms
+2021-07-12 15:59:55,014 INFO 21168 [egg:logger] init all loggers with options: {"dir":"D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-07-12 15:59:55,019 INFO 21168 [egg:core] dump config after load, 3ms
+2021-07-12 15:59:55,052 INFO 21168 [egg-watcher] Start watching: ["D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy","D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"]
+2021-07-12 15:59:55,052 INFO 21168 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app"
+2021-07-12 15:59:55,052 INFO 21168 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\config"
+2021-07-12 15:59:55,052 INFO 21168 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks"
+2021-07-12 15:59:55,052 INFO 21168 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\mocks_proxy"
+2021-07-12 15:59:55,053 INFO 21168 [egg-watcher] Start watching: "D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\app.js"
+2021-07-12 15:59:55,053 INFO 21168 [egg-watcher:agent] watcher start success
+2021-07-12 15:59:55,063 INFO 21168 [egg:core] dump config after ready, 5ms
+2021-07-12 20:05:57,402 ERROR 21168 nodejs.ClusterClientNoResponseError: client no response in 4157241ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\cluster-client\lib\leader.js:77:23)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)
+name: "ClusterClientNoResponseError"
+pid: 21168
+hostname: LAPTOP-CMJMK97D
+

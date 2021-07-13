@@ -190,3 +190,21 @@
 2021-07-09 19:58:27,075 INFO 4276 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 30692929ms at 2021-07-10 04:30:00.004
 2021-07-09 19:58:27,076 INFO 4276 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 14492924ms at 2021-07-10 00:00:00.000
 2021-07-09 19:58:27,077 INFO 4276 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 14493924ms at 2021-07-10 00:00:01.001
+2021-07-12 08:54:16,195 INFO 9568 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2021-07-12 08:54:16,195 INFO 9568 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js
+2021-07-12 08:54:16,195 INFO 9568 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2021-07-12 08:54:17,024 INFO 428 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 70542978ms at 2021-07-13 04:30:00.002
+2021-07-12 08:54:17,025 INFO 428 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 54342975ms at 2021-07-13 00:00:00.000
+2021-07-12 08:54:17,025 INFO 428 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 54343975ms at 2021-07-13 00:00:01.000
+2021-07-12 15:57:13,560 INFO 14060 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2021-07-12 15:57:13,560 INFO 14060 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js
+2021-07-12 15:57:13,560 INFO 14060 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2021-07-12 15:57:13,998 INFO 12808 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 45166003ms at 2021-07-13 04:30:00.001
+2021-07-12 15:57:13,999 INFO 12808 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 28966002ms at 2021-07-13 00:00:00.001
+2021-07-12 15:57:13,999 INFO 12808 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 28967001ms at 2021-07-13 00:00:01.000
+2021-07-12 15:59:55,689 INFO 16972 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2021-07-12 15:59:55,689 INFO 16972 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js
+2021-07-12 15:59:55,689 INFO 16972 [egg-schedule]: register schedule D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2021-07-12 15:59:56,117 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 45003887ms at 2021-07-13 04:30:00.003
+2021-07-12 15:59:56,117 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 28803883ms at 2021-07-13 00:00:00.000
+2021-07-12 15:59:56,118 INFO 21168 [Timer] D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 28804883ms at 2021-07-13 00:00:01.001

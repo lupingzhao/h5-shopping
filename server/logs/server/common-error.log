@@ -1831,3 +1831,47 @@ name: "MongoError"
 pid: 9412
 hostname: STU008
 
+2021-07-12 18:55:00,917 ERROR 16972 [-/127.0.0.1/-/11ms GET /v1/alreadyEvaluated?page=undefined] nodejs.MongoError: Argument to $skip cannot be negative
+    at Connection.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\pool.js:443:61)
+    at Connection.emit (events.js:375:28)
+    at processMessage (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\connection.js:364:10)
+    at Socket.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\connection.js:533:15)
+    at Socket.emit (events.js:375:28)
+    at addChunk (internal/streams/readable.js:290:12)
+    at readableAddChunk (internal/streams/readable.js:265:9)
+    at Socket.Readable.push (internal/streams/readable.js:204:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+ok: 0
+errmsg: "Argument to $skip cannot be negative"
+code: 15956
+codeName: "Location15956"
+name: "MongoError"
+pid: 16972
+hostname: LAPTOP-CMJMK97D
+
+2021-07-12 18:55:05,114 ERROR 16972 [-/127.0.0.1/-/5ms GET /v1/alreadyEvaluated?page=undefined] nodejs.MongoError: Argument to $skip cannot be negative
+    at Connection.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\pool.js:443:61)
+    at Connection.emit (events.js:375:28)
+    at processMessage (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\connection.js:364:10)
+    at Socket.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongodb-core\lib\connection\connection.js:533:15)
+    at Socket.emit (events.js:375:28)
+    at addChunk (internal/streams/readable.js:290:12)
+    at readableAddChunk (internal/streams/readable.js:265:9)
+    at Socket.Readable.push (internal/streams/readable.js:204:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+ok: 0
+errmsg: "Argument to $skip cannot be negative"
+code: 15956
+codeName: "Location15956"
+name: "MongoError"
+pid: 16972
+hostname: LAPTOP-CMJMK97D
+
+2021-07-12 20:05:57,387 ERROR 21168 nodejs.ClusterClientNoResponseError: client no response in 4157241ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\cluster-client\lib\leader.js:77:23)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)
+name: "ClusterClientNoResponseError"
+pid: 21168
+hostname: LAPTOP-CMJMK97D
+
