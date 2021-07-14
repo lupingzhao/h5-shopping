@@ -54,16 +54,16 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
+      if (localStorage.getItem("idDirect")) {
         // //  传递参数
         this.$router.push({
           path: "/Details",
           query: {
-            id: this.data[0].id,
+            id: val,
           },
         });
+        this.$router.back();
       } else {
-        this.$router.push("/CarViews");
       }
     },
     // 点击提交订单

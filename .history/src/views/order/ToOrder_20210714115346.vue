@@ -54,7 +54,9 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
+
+            toOder: 1,
+      if (this.$route.query.) {
         // //  传递参数
         this.$router.push({
           path: "/Details",

@@ -54,17 +54,7 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
-        // //  传递参数
-        this.$router.push({
-          path: "/Details",
-          query: {
-            id: this.data[0].id,
-          },
-        });
-      } else {
-        this.$router.push("/CarViews");
-      }
+      this.$router.back();
     },
     // 点击提交订单
     onSubmit() {
@@ -74,6 +64,7 @@ export default {
         let idDirect;
         //立即支付页面
         if (localStorage.getItem("idDirect")) {
+          console.log(1111);
           idDirect = true;
           this.data.map((a) => {
             orderIds.push(a.id);

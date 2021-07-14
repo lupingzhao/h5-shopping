@@ -3,7 +3,7 @@ import router from '../router'
 export default {
     // 跳转路由
     go(val, key, value) {
-        // key 是一个变量 传递的参数名是字符串  value参数值
+        // key 是一个变量 传递的参数名  value参数值
         if (key) {
             router.push({
                 path: val,

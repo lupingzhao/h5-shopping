@@ -66,12 +66,7 @@ export default {
         this.$set(this.good, "count", this.value);
         localStorage.setItem("carDatas", JSON.stringify([this.good]));
         localStorage.setItem("idDirect", JSON.stringify(true));
-        this.$router.push({
-          path: "/ToOrder",
-          query: {
-            toOder: 1,
-          },
-        });
+        this.$router.push("/ToOrder");
       } else {
         Dialog.confirm({
           title: "未登录",

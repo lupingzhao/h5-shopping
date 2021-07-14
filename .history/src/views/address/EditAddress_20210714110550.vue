@@ -87,8 +87,6 @@ export default {
           this.$Toast(res.msg);
           this.$publicJs.go("/AddressView");
           // console.log(res);
-          // 清楚本地的地址
-          localStorage.removeItem("id");
         })
         .catch((err) => {
           console.log(err);
@@ -101,8 +99,6 @@ export default {
         .then((res) => {
           this.$Toast(res.msg);
           this.$publicJs.go("/AddressView");
-          // 清楚本地的地址
-          localStorage.removeItem("id");
         })
         .catch();
     },

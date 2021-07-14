@@ -68,7 +68,7 @@ export default {
   methods: {
     // 返回
     goback() {
-      this.$router.push("/My");
+      this.$router.back();
     },
     // 添加地址
     onAdd() {
@@ -76,6 +76,7 @@ export default {
     },
     // 编辑地址
     onEdit(item, index) {
+      console.log(item);
       // this.$Toast("编辑地址:" + index);
       this.$publicJs.go("/EditAddress");
       //
@@ -86,7 +87,9 @@ export default {
       this.$api
         .getAddress()
         .then((res) => {
+          console.log(res.address);
           this.list = res.address;
+
           this.list.map((a) => {
             this.$set(a, "id", a._id);
           });

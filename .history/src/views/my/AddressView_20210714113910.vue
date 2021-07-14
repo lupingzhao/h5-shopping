@@ -86,7 +86,9 @@ export default {
       this.$api
         .getAddress()
         .then((res) => {
+          console.log(res.address);
           this.list = res.address;
+
           this.list.map((a) => {
             this.$set(a, "id", a._id);
           });

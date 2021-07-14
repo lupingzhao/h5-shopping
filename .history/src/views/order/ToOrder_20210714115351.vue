@@ -54,6 +54,8 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
+
+            toOder: 1,
       if (this.$route.query.toOder) {
         // //  传递参数
         this.$router.push({

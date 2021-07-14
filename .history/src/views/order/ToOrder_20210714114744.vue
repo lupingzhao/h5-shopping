@@ -54,12 +54,13 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
+      console.log(this.data.id);
+      if (localStorage.getItem("idDirect")) {
         // //  传递参数
         this.$router.push({
           path: "/Details",
           query: {
-            id: this.data[0].id,
+            id: this.data.id,
           },
         });
       } else {

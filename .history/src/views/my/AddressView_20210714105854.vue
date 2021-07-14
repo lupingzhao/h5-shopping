@@ -68,7 +68,7 @@ export default {
   methods: {
     // 返回
     goback() {
-      this.$router.push("/My");
+      this.$router.back();
     },
     // 添加地址
     onAdd() {
@@ -77,20 +77,19 @@ export default {
     // 编辑地址
     onEdit(item, index) {
       // this.$Toast("编辑地址:" + index);
-      this.$publicJs.go("/EditAddress");
-      //
-      localStorage.setItem("id", JSON.stringify(item));
+      this.$publicJs.go("/EditAddress", "id", JSON.stringify(item));
     },
     // 获取地址列表数据
     getAddress() {
       this.$api
         .getAddress()
         .then((res) => {
+          console.log(res.address);
           this.list = res.address;
+
           this.list.map((a) => {
             this.$set(a, "id", a._id);
           });
-          //有地址才存在有默认的id
           if (this.list.length > 0) {
             //   // 默认选中的id
             let istrue = this.list.filter((a) => {

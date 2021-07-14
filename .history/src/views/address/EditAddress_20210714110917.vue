@@ -101,8 +101,6 @@ export default {
         .then((res) => {
           this.$Toast(res.msg);
           this.$publicJs.go("/AddressView");
-          // 清楚本地的地址
-          localStorage.removeItem("id");
         })
         .catch();
     },

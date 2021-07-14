@@ -130,8 +130,9 @@ export default {
     },
     // 跳转路由
     go(val) {
-      if (val === "/AddressView") {
-        localStorage.removeItem("toOder");
+      console.log(val);
+      // if(val==='/AddressView'){
+        localStorage.removeItem('toOder')
       }
       if (this.name) {
         this.$publicJs.go(val);

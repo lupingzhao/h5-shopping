@@ -67,10 +67,10 @@ export default {
         localStorage.setItem("carDatas", JSON.stringify([this.good]));
         localStorage.setItem("idDirect", JSON.stringify(true));
         this.$router.push({
-          path: "/ToOrder",
-          query: {
-            toOder: 1,
-          },
+          path:"/ToOrder",
+          query:{
+            toOder：1
+          }
         });
       } else {
         Dialog.confirm({

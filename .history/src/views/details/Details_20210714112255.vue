@@ -134,7 +134,7 @@ export default {
     },
     //   返回
     back() {
-      this.$router.push("/");
+      this.$router.back();
     },
     // 图片预览
     toView(val) {

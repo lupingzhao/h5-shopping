@@ -54,7 +54,8 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
+      console.log(this.data[0].id);
+      if (localStorage.getItem("idDirect")) {
         // //  传递参数
         this.$router.push({
           path: "/Details",

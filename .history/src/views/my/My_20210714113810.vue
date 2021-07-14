@@ -130,6 +130,7 @@ export default {
     },
     // 跳转路由
     go(val) {
+      console.log(val);
       if (val === "/AddressView") {
         localStorage.removeItem("toOder");
       }
