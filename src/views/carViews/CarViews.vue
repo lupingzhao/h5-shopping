@@ -77,7 +77,9 @@
             </div>
 
             <template #right>
-              <div class="del-alsid" @click="delgoods(item.cid)">删除</div>
+              <div class="del-alsid" @click="delgoods(item.cid, index)">
+                删除
+              </div>
             </template>
           </van-swipe-cell>
         </div>
@@ -101,7 +103,6 @@ export default {
       result: [],
       value: 1,
       checked: false,
-      container: null,
     };
   },
   components: { FootNav, Checkbox, CheckboxGroup },
@@ -153,7 +154,8 @@ export default {
     },
 
     //删除单个
-    delgoods(val) {
+    delgoods(val, index) {
+      console.log(this.carData);
       this.$Dialog
         .confirm({
           title: "删除商品",
@@ -165,7 +167,8 @@ export default {
             .then((res) => {
               // console.log(res);
               // 页面显示的数据
-              this.getCard();
+              this.carData.splice(index, 1);
+              console.log(this.carData);
               this.$store.commit("setCarNum", this.carData.length);
               localStorage.setItem("carNum", this.carData.length);
             })
@@ -198,18 +201,19 @@ export default {
             this.$api
               .deleteShop(ids)
               .then((res) => {
-                this.$Toast.success("删除商品成功");
-                // console.log(res);
+                this.$Toast.success(res.msg);
+
+                // 页面显示的数据
+                this.carData = this.carData.filter((a) => {
+                  return !a.check;
+                });
+                // 本地粗存
                 this.$store.commit("setCarNum", this.carData.length);
                 localStorage.setItem("carNum", this.carData.length);
               })
               .catch((err) => {
-                console.log(err);
+                this.$Toast(err.msg);
               });
-            // 页面显示的数据
-            this.carData = this.carData.filter((a) => {
-              return !a.check;
-            });
           })
           .catch(() => {
             // on cancel
@@ -250,7 +254,6 @@ export default {
   },
   mounted() {
     this.getCard();
-    this.container = this.$refs.container;
   },
   computed: {
     name() {

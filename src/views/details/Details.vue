@@ -80,12 +80,14 @@ export default {
       show: false,
       isCollection: false,
       comment: null,
+      username: null,
     };
   },
   components: { DetaillNow, DetailsComment, DetailsCollect },
   methods: {
     // 获取商品详情
     goodOne() {
+      this.username = JSON.parse(localStorage.getItem("userInfo")).username;
       let id = this.$route.query.id;
       // console.log(id);
       this.$api
@@ -100,11 +102,15 @@ export default {
                 detail: this.good.detail,
               };
               // 储存浏览记录
-              this.$utils.saveHistory({
-                key: "look",
-                data: this.good,
-                attr: "id",
-              });
+              if (this.username) {
+                this.$utils.saveHistory({
+                  key: "look",
+                  data: this.good,
+                  attr: "id",
+                });
+              } else {
+                return;
+              }
             } else {
               this.$Toast("商品出走中......");
               this.$router.push("/");

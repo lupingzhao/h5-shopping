@@ -4,14 +4,14 @@
     <!-- 搜索记录 -->
     <div v-if="history" class="bgc-low-gray">
       <!-- 记录为空 -->
-      <div v-if="historydata.length === 0">
+      <div v-if="!historydata">
         <van-empty description="暂无搜索记录" class="empty" />
       </div>
       <!-- 不为空 -->
       <div v-else class="p-5">
         <div class="bgc-white m-tb-10 p-10 flex jcsb">
           <div>历史记录</div>
-          <div @click="localDelete('seachHistory')">清空历史记录</div>
+          <div @click="localDelete">清空历史记录</div>
         </div>
         <div class="flex flex-wrap">
           <div
@@ -72,16 +72,27 @@ export default {
       // 搜索历史
       history: true,
       // 数据
-      historydata: [],
+      historydata: null,
       seachData: [],
+      //
+      username: null,
     };
   },
   components: {},
   methods: {
     // 获取搜索记录
     getHistroy() {
-      // 获取本地存储记录
-      this.historydata = JSON.parse(localStorage.getItem("seachHistory"));
+      this.username = JSON.parse(localStorage.getItem("userInfo")).username;
+      // 登陆获取用户的搜索记录
+      if (this.username) {
+        this.historydata = JSON.parse(
+          localStorage.getItem(`${this.username}seachHistory`)
+        );
+      } else {
+        // 没有登陆获取公共的记录
+        // 获取本地存储记录
+        this.historydata = JSON.parse(localStorage.getItem("seachHistory"));
+      }
     },
     //  查看详情
     goodOne(val) {
@@ -101,13 +112,19 @@ export default {
       });
     },
     // 清除本地数据
-    localDelete(name) {
-      if (localStorage.getItem(`${name}`) === null) {
+    localDelete() {
+      let key;
+      if (this.username) {
+        key = `${this.username}seachHistory`;
+      } else {
+        key = "seachHistory";
+      }
+      if (localStorage.getItem(`${key}`) === null) {
         return;
       } else {
-        localStorage.removeItem(`${name}`);
+        localStorage.removeItem(`${key}`);
       }
-      this.historydata = [];
+      this.historydata = null;
       // console.log(this.historydata);
     },
     // 点击关键字搜索
@@ -133,9 +150,16 @@ export default {
               // console.log(a);
               a.name = a.name.replace(val, `<span class="red"> ${val}<span>`);
             });
-            // 存储搜索关键字
-            // 添加本地储存记录
-            this.$utils.saveHistory({ key: "seach", data: val });
+            // 登陆存储该用户的搜索关键字  未登录粗存游客搜索的记录
+            if (this.username) {
+              this.$utils.saveHistory({
+                key: `${this.username}seach`,
+                data: val,
+              });
+            } else {
+              // 添加本地储存记录
+              this.$utils.saveHistory({ key: "seach", data: val });
+            }
           })
           .catch((err) => {
             console.log(err);

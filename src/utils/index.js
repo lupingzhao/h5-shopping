@@ -92,6 +92,7 @@ export default {
     },
 
     // 获取记录
+    // key；储存的名字
     getHistory({ key }) {
         let name = key + 'History'
         let arr = JSON.parse(localStorage.getItem(name))

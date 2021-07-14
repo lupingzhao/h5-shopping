@@ -82,6 +82,7 @@ export default {
           .then((res) => {
             Toast.success("加入购物车成功");
             // 请求购物车数据
+            // 改变角标
             this.getData();
 
             // console.log(res);

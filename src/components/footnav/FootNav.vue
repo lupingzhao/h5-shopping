@@ -43,27 +43,8 @@ export default {
     };
   },
   components: {},
-  methods: {
-    getData() {
-      this.$api
-        .getCard()
-        .then((res) => {
-          // console.log(res);
-          if (res.code === 200) {
-            this.$store.commit("setCarNum", res.shopList.length);
-          }
-        })
-        .catch((err) => {
-          // console.log(err);
-        });
-    },
-  },
-  mounted() {
-    // console.log(this.active);
-    this.getData();
-    // console.log(this.$route);
-    // this.active = this.$route;
-  },
+  methods: {},
+  mounted() {},
   computed: {
     carNum() {
       if (this.$store.state.nickname) {
