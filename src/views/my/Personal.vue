@@ -38,8 +38,13 @@
       </div>
 
       <div class="a-i-c flex p-tb-10">
-        <van-field v-model="date" label="出生年月日" @focus="ipt" />
-        <van-calendar v-model="show" @confirm="onConfirm" :min-date="minDate" />
+        <van-field v-model="date" label="出生年月日" @focus="ipt" readonly />
+        <van-calendar
+          v-model="show"
+          @confirm="onConfirm"
+          :min-date="minDate"
+          :max-date="maxDate"
+        />
       </div>
       <div class="t-a-c">
         <van-button type="primary" class="btn" @click="saveUser"
@@ -65,26 +70,18 @@ export default {
       show: false,
       emll: null,
       minDate: new Date(1900, 0, 1),
+      maxDate: new Date(),
     };
   },
   components: {},
   methods: {
-    user() {
-      this.$api
-        .user()
-        .then((res) => {
-          console.log(res);
-          this.userInfo = res.userInfo;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
     ipt() {
       this.show = true;
     },
     formatDate(date) {
-      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+      return `${date.getFullYear()}年${
+        date.getMonth() + 1
+      }月${date.getDate()}日`;
     },
     onConfirm(date) {
       this.show = false;
@@ -92,31 +89,18 @@ export default {
     },
     // 修改信息
     saveUser() {
-      this.$api
-        .saveUser({
-          gender: this.userInfo.gender,
-          month: this.date.substr(0, 1),
-          day: this.date.substr(2, 2),
-          year: this.date.substr(5, 4),
-          nickname: this.userInfo.nickname,
-        })
-        .then((res) => {
-          console.log(res);
-          this.$store.commit("setNickname", this.userInfo.nickname);
-          this.$router.back();
-          Notify({ type: "success", message: "修改成功" });
-          //   console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      localStorage.setItem("userInfo", JSON.stringify(this.userInfo));
+      this.$router.back();
+      Notify({ type: "success", message: "修改成功" });
+      this.$store.commit("setNickname", this.userInfo.nickname);
     },
     goback() {
       this.$router.back();
     },
   },
   mounted() {
-    this.user();
+    this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    this.date = `${this.userInfo.year} 年${this.userInfo.month}月${this.userInfo.day}日`;
   },
   computed: {},
   watch: {},

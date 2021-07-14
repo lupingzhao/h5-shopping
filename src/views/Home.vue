@@ -1,6 +1,7 @@
 <template>
-  <div class="font-s-14 p-b-10">
-    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+  <div class="font-s-14 home">
+    <loading v-if="loading"></loading>
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh" v-else>
       <van-sticky :offset-top="0">
         <head-child class="head flex">
           <template #left>
@@ -75,11 +76,13 @@ import Recommended from "../components/index/Recommended.vue";
 import HotGoods from "../components/index/HotGoods";
 
 import Seachview from "../components/index/Seachview.vue";
+
 export default {
   name: "home",
   props: {},
   data() {
     return {
+      loading: true,
       headData: null,
       category: null,
       advertesPicture: null,
@@ -114,6 +117,7 @@ export default {
     onRefresh() {
       setTimeout(() => {
         Toast("刷新成功");
+        this.getData();
         this.isLoading = false;
       }, 1000);
     },
@@ -148,6 +152,7 @@ export default {
           //   name: res.data.floorName.floor1,
           // });
           // console.log(this.floordata);
+          this.loading = false;
         })
         .catch((err) => {
           console.log(err);
@@ -186,7 +191,7 @@ export default {
         function onError(data) {
           // 定位出错
           // console.log("定位出错", data);
-          _this.address = "定位失败";
+          _this.address = "失败...";
           _this.boo = false;
           localStorage.setItem("address", _this.address);
           // this.$store.commit('mutationHandler', payload);
@@ -256,7 +261,9 @@ export default {
 .head {
   padding: 10px 5px;
 }
-
+.home {
+  margin-bottom: 60px;
+}
 .empty {
   transform: translateY(50%);
 }

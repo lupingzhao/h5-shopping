@@ -21,7 +21,7 @@ import { Checkbox, CheckboxGroup } from 'vant';
 import { Overlay } from 'vant';
 import { Toast } from 'vant';
 import { Dialog } from 'vant';
-
+import loading from './components/loading.vue'
 Vue.use(Overlay);
 
 
@@ -36,8 +36,10 @@ Vue.prototype.$Toast = Toast
 Vue.prototype.$publicJs = publicJs
 Vue.prototype.$utils = utils
 
+
 // 注册全局组件
 Vue.component('FootNav', FootNav)
+Vue.component('loading', loading)
 // \注册地址
 Vue.use(IndexBar);
 Vue.use(IndexAnchor);

@@ -7,7 +7,7 @@
         <div
           v-for="(item, index) in recommended"
           :key="index"
-          class="recomen bor-r-1"
+          class="recomen"
           @click="goodOne(item.goodsId)"
         >
           <img :src="item.image" alt="" class="img" />
@@ -31,6 +31,7 @@
 <script>
 import BScroll from "better-scroll";
 import { Form, Toast } from "vant";
+import { Dialog } from "vant";
 export default {
   name: "",
   props: {
@@ -39,7 +40,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      username: "",
+    };
   },
   components: {},
   methods: {
@@ -50,19 +53,15 @@ export default {
           startX: 0, // 配置的详细信息请参考better-scroll的官方文档，这里不再赘述
           click: true,
           scrollX: true,
-          scrollY: false,
+          // scrollY: false,
+          // 在手机端 让手指放在滚动区域也可以竖向滚动
+          eventPassthrough: "vertical",
         });
       });
     },
     //  查看详情
     goodOne(val) {
       // console.log(val);
-      Toast.loading({
-        message: "加载中...",
-        forbidClick: true,
-        loadingType: "spinner",
-        duration: "1000",
-      });
       // //  传递参数
       this.$router.push({
         path: "/Details",
@@ -91,7 +90,16 @@ export default {
             console.log(err);
           });
       } else {
-        Toast("未登录");
+        Dialog.confirm({
+          title: "未登录",
+          message: "是否去登陆",
+        })
+          .then(() => {
+            this.$router.push("/Login");
+          })
+          .catch(() => {
+            // on cancel
+          });
       }
     },
     // 滚动
@@ -103,7 +111,7 @@ export default {
           // console.log(res);
           if (res.code === 200) {
             this.$store.commit("setCarNum", res.shopList.length);
-            localStorage.setItem("carNum", res.shopList.length);
+            localStorage.setItem(`${this.username}carNum`, res.shopList.length);
           }
         })
         .catch((err) => {
@@ -112,6 +120,9 @@ export default {
     },
   },
   mounted() {
+    localStorage.getItem("userInfo")
+      ? (this.username = JSON.parse(localStorage.getItem("userInfo")).username)
+      : "";
     this.$nextTick(() => {
       this.scroll();
     });

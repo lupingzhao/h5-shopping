@@ -1,8 +1,7 @@
 <template>
   <div>
-    <van-sticky :offset-top="0">
-      <div class="p-tb-10 t-a-c font-s-16 title">购物车</div>
-    </van-sticky>
+    <div class="p-tb-10 t-a-c font-s-16 title">购物车</div>
+
     <div v-if="name === null">
       <van-empty description="未登录" class="empt1 font-s-16">
         <div @click="goLogin">去登陆</div>
@@ -18,32 +17,31 @@
 
       <!-- 有商品时 -->
       <div v-else class="box">
-        <div class="p-10 flex jcsb">
-          <div class="flex">
-            <div class="p-lr-10">
-              <input type="checkbox" @change="checkAll" v-model="checked" />
-            </div>
-            <div v-if="checked">取消全选</div>
-            <div v-else>全选</div>
-          </div>
-          <div>
-            <div class="p-tb-10">
-              合计: <span class="font-c-red">{{ sum }}</span>
+        <van-sticky :offset-top="0">
+          <div class="flex jcsb orderhead">
+            <div class="flex">
+              <div class="p-lr-10">
+                <input type="checkbox" @change="checkAll" v-model="checked" />
+              </div>
+              <div v-if="checked">取消全选</div>
+              <div v-else>全选</div>
             </div>
             <div>
-              <van-button
-                type="primary"
-                size="small"
-                class="btn"
-                @click="goOrder"
-                >去结算</van-button
-              >
-              <van-button type="danger" size="small" @click="del"
-                >删除</van-button
-              >
+              <div class="p-tb-10">
+                合计: <span class="font-c-red">{{ sum }}</span>
+              </div>
+              <div>
+                <van-button type="primary" size="small" @click="goOrder"
+                  >去结算</van-button
+                >
+                <van-button type="danger" size="small" @click="del"
+                  >删除</van-button
+                >
+              </div>
             </div>
           </div>
-        </div>
+        </van-sticky>
+
         <!-- 单独的商品 -->
         <div v-for="(item, index) in carData" :key="index" class="goods">
           <van-swipe-cell>
@@ -103,6 +101,7 @@ export default {
       result: [],
       value: 1,
       checked: false,
+      username: "",
     };
   },
   components: { FootNav, Checkbox, CheckboxGroup },
@@ -170,7 +169,10 @@ export default {
               this.carData.splice(index, 1);
               console.log(this.carData);
               this.$store.commit("setCarNum", this.carData.length);
-              localStorage.setItem("carNum", this.carData.length);
+              localStorage.setItem(
+                `${this.username}carNum`,
+                this.carData.length
+              );
             })
             .catch((err) => {
               // console.log(err);
@@ -209,7 +211,10 @@ export default {
                 });
                 // 本地粗存
                 this.$store.commit("setCarNum", this.carData.length);
-                localStorage.setItem("carNum", this.carData.length);
+                localStorage.setItem(
+                  `${this.username}carNum`,
+                  this.carData.length
+                );
               })
               .catch((err) => {
                 this.$Toast(err.msg);
@@ -232,12 +237,8 @@ export default {
       if (carDatas.length > 0) {
         // 本地储存
         localStorage.setItem("carDatas", JSON.stringify(carDatas));
-        this.$router.push({
-          path: "ToOrder",
-          query: {
-            idDirect: "",
-          },
-        });
+        localStorage.setItem("idDirect", 0);
+        this.$router.push("ToOrder");
       } else {
         this.$Toast("无选中商品");
       }
@@ -253,6 +254,9 @@ export default {
     },
   },
   mounted() {
+    localStorage.getItem("userInfo")
+      ? (this.username = JSON.parse(localStorage.getItem("userInfo")).username)
+      : "";
     this.getCard();
   },
   computed: {
@@ -293,6 +297,10 @@ export default {
 }
 .title {
   background-color: rgb(235, 102, 26);
+  height: 20px;
+}
+.orderhead {
+  background-color: #f5f5f5;
 }
 .goods {
   padding: 10px 0 10px 10px;

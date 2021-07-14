@@ -1,63 +1,66 @@
 <template>
   <div v-if="good" class="good height-100">
-    <div class="goback flex" @click="back">
-      <i class="iconfont icon-zuojiantou"></i>
-    </div>
-
-    <!-- 轮播图 -->
-    <van-swipe class="my-swipe img" :autoplay="3000" indicator-color="red">
-      <van-swipe-item v-for="item in 2" :key="item">
-        <img :src="good.image" alt="" class="img" @click="toView(item - 1)" />
-      </van-swipe-item>
-    </van-swipe>
-
-    <div class="p-10">
-      <div>{{ good.name }}</div>
-      <div class="p-tb-10">
-        <span class="font-s-18">￥{{ good.present_price }}</span> &nbsp;
-        <span class="font-s-14 font-c-gray del-line"
-          >￥{{ good.orl_price }}</span
-        >
+    <loading v-if="loading"></loading>
+    <div v-else>
+      <div class="goback flex" @click="back">
+        <i class="iconfont icon-zuojiantou"></i>
       </div>
-      <div class="flex jcsb p-5 font-s-14 font-c-gray">
-        <div>运费：0</div>
-        <div>剩余：{{ good.amount }}</div>
-        <details-collect :id="id" v-if="id" :good="good"></details-collect>
-      </div>
-      <div class="flex jcsb p-5 jcsb m-tb-10">
-        <div class="flex">
-          <i class="iconfont icon-dianpu"></i>
-          &nbsp; 有赞的店 &nbsp;
-          <div class="gf font-s-12">官方</div>
+
+      <!-- 轮播图 -->
+      <van-swipe class="my-swipe img" :autoplay="3000" indicator-color="red">
+        <van-swipe-item v-for="item in 2" :key="item">
+          <img :src="good.image" alt="" class="img" @click="toView(item - 1)" />
+        </van-swipe-item>
+      </van-swipe>
+
+      <div class="p-10">
+        <div>{{ good.name }}</div>
+        <div class="p-tb-10">
+          <span class="font-s-18">￥{{ good.present_price }}</span> &nbsp;
+          <span class="font-s-14 font-c-gray del-line"
+            >￥{{ good.orl_price }}</span
+          >
         </div>
-        <div>
-          进入店铺
-          <i class="iconfont icon-youjiantou"></i>
+        <div class="flex jcsb p-5 font-s-14 font-c-gray">
+          <div>运费：0</div>
+          <div>剩余：{{ good.amount }}</div>
+          <details-collect :id="id" v-if="id" :good="good"></details-collect>
+        </div>
+        <div class="flex jcsb p-5 jcsb m-tb-10">
+          <div class="flex">
+            <i class="iconfont icon-dianpu"></i>
+            &nbsp; 有赞的店 &nbsp;
+            <div class="gf font-s-12">官方</div>
+          </div>
+          <div>
+            进入店铺
+            <i class="iconfont icon-youjiantou"></i>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 详情 评论 -->
-    <details-comment :detail="detail" :comment="comment"></details-comment>
-    <!-- foot -->
-    <van-goods-action>
-      <van-goods-action-icon icon="chat-o" text="客服" dot />
-      <van-goods-action-icon
-        icon="cart-o"
-        text="购物车"
-        :badge="carNum"
-        @click="goCar"
-      />
-      <van-goods-action-icon icon="shop-o" text="店铺" />
-      <van-goods-action-button
-        type="warning"
-        text="加入购物车"
-        @click="addCar()"
-      />
-      <van-goods-action-button type="danger" text="立即购买" @click="show1" />
-    </van-goods-action>
+      <!-- 详情 评论 -->
+      <details-comment :detail="detail" :comment="comment"></details-comment>
+      <!-- foot -->
+      <van-goods-action>
+        <van-goods-action-icon icon="chat-o" text="客服" dot />
+        <van-goods-action-icon
+          icon="cart-o"
+          text="购物车"
+          :badge="carNum"
+          @click="goCar"
+        />
+        <van-goods-action-icon icon="shop-o" text="店铺" />
+        <van-goods-action-button
+          type="warning"
+          text="加入购物车"
+          @click="addCar()"
+        />
+        <van-goods-action-button type="danger" text="立即购买" @click="show1" />
+      </van-goods-action>
 
-    <!-- 遮罩层  立即购买-->
-    <detaill-now v-if="show" @closed="closed" :good="good"></detaill-now>
+      <!-- 遮罩层  立即购买-->
+      <detaill-now v-if="show" @closed="closed" :good="good"></detaill-now>
+    </div>
   </div>
 </template>
 
@@ -68,11 +71,13 @@ import { Toast } from "vant";
 import DetaillNow from "../../components/goods/DetaillNow.vue";
 import DetailsComment from "../../components/goods/DetailsComment.vue";
 import DetailsCollect from "../../components/goods/DetailsCollect.vue";
+
 export default {
   name: "",
   props: {},
   data() {
     return {
+      loading: true,
       good: null,
       detail: null,
       id: this.$route.query.id,
@@ -87,15 +92,16 @@ export default {
   methods: {
     // 获取商品详情
     goodOne() {
-      this.username = JSON.parse(localStorage.getItem("userInfo")).username;
       let id = this.$route.query.id;
       // console.log(id);
       this.$api
         .goodOne(id)
         .then((res) => {
           if (res.code === 200) {
+            // console.log(res);
             this.comment = res.goods.comment;
             this.good = res.goods.goodsOne;
+            this.loading = false;
             // console.log(this.good);
             if (this.good) {
               this.detail = {
@@ -104,7 +110,7 @@ export default {
               // 储存浏览记录
               if (this.username) {
                 this.$utils.saveHistory({
-                  key: "look",
+                  key: `${this.username}look`,
                   data: this.good,
                   attr: "id",
                 });
@@ -181,7 +187,7 @@ export default {
           // console.log(res);
           if (res.code === 200) {
             this.$store.commit("setCarNum", res.shopList.length);
-            localStorage.setItem("carNum", res.shopList.length);
+            localStorage.setItem(`${this.username}carNum`, res.shopList.length);
           }
         })
         .catch((err) => {
@@ -198,8 +204,13 @@ export default {
     },
   },
   mounted() {
+    localStorage.getItem("userInfo")
+      ? (this.username = JSON.parse(localStorage.getItem("userInfo")).username)
+      : "";
     this.goodOne();
     this.getData();
+
+    // console.log(localStorage.getItem("userInfo"));
   },
   computed: {
     // 购物车的角标

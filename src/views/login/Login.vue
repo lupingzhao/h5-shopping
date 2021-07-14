@@ -27,7 +27,6 @@
             type="tel"
             label="手机号码"
             placeholder="仅注册需要"
-            :rules="[{ pattern, message: '请输入正确手机号' }]"
           />
 
           <van-field
@@ -86,6 +85,7 @@ export default {
       // 图片验证码
       verify: null,
       // 手机验证规则
+      //  :rules="[{ pattern, message: '请输入正确手机号' }]"
       pattern: /^(?:(?:\+|00)86)?1\d{10}$/,
       islogin: false,
     };
@@ -129,7 +129,7 @@ export default {
 
             if (res.code === 200) {
               // 成功通知
-              Notify({ type: "success", message: res.msg, duration: 1000 });
+              this.$Toast(res.msg);
               this.$router.push("/My");
               // 本地储存用户名
               this.$store.commit("setNickname", this.nickname);
@@ -141,7 +141,7 @@ export default {
           })
           .catch((err) => {
             // console.log(err);
-            Notify({ type: "success", message: err.msg, duration: 1000 });
+            this.$Toast(err.msg);
           });
       } else {
         this.$api
@@ -151,24 +151,19 @@ export default {
             verify: this.verify,
           })
           .then((res) => {
-            console.log(res);
             if (res.code === 200) {
-              Notify({ type: "success", message: res.msg, duration: 1000 });
+              this.$Toast(res.msg);
               this.$router.push("/My");
               // 本地储存用户名
               this.$store.commit("setNickname", this.nickname);
               localStorage.setItem("nickname", this.nickname);
+              localStorage.setItem("userInfo", JSON.stringify(res.userInfo));
             } else {
-              Notify({
-                message: "err.msg",
-                color: "#ad0000",
-                background: "rgb(86, 86, 87)",
-                duration: 1000,
-              });
+              this.$Toast(res.msg);
             }
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
           });
       }
 

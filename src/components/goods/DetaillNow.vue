@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { Dialog } from "vant";
 export default {
   name: "",
   props: {
@@ -65,13 +66,8 @@ export default {
       if (localStorage.getItem("nickname")) {
         this.$set(this.good, "count", this.value);
         localStorage.setItem("carDatas", JSON.stringify([this.good]));
-        localStorage.setItem("idDirect", JSON.stringify(true));
-        this.$router.push({
-          path: "/ToOrder",
-          query: {
-            toOder: 1,
-          },
-        });
+        localStorage.setItem("idDirect", 1);
+        this.$router.push("/ToOrder");
       } else {
         Dialog.confirm({
           title: "未登录",

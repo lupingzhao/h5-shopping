@@ -10,9 +10,7 @@
         :thumb="item.image_path"
         @click="toview(item.id)"
       >
-        <template #price class="price">
-          {{ item.present_price }}
-        </template>
+        <template #price class="price"> ￥{{ item.present_price }} </template>
 
         <template #footer>
           <div class="del">

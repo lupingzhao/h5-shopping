@@ -54,8 +54,8 @@ export default {
   components: { OrderHead },
   methods: {
     goback() {
-      if (this.$route.query.toOder) {
-        // //  传递参数
+      if (localStorage.getItem("idDirect") === "1") {
+        //  传递参数
         this.$router.push({
           path: "/Details",
           query: {
@@ -65,6 +65,7 @@ export default {
       } else {
         this.$router.push("/CarViews");
       }
+      localStorage.removeItem("idDirect");
     },
     // 点击提交订单
     onSubmit() {
@@ -73,7 +74,7 @@ export default {
         let orderIds = [];
         let idDirect;
         //立即支付页面
-        if (localStorage.getItem("idDirect")) {
+        if (localStorage.getItem("idDirect") === "1") {
           idDirect = true;
           this.data.map((a) => {
             orderIds.push(a.id);
@@ -81,6 +82,7 @@ export default {
         } else {
           idDirect = false;
           // 购物车购买
+          console.log(this.data);
           this.data.map((a) => {
             orderIds.push(a.cid);
           });

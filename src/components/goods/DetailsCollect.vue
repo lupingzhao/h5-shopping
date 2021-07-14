@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       isCollection: false,
+      username: "",
     };
   },
   components: {},
@@ -45,6 +46,7 @@ export default {
     collect() {
       // 先判断是否登陆
       if (localStorage.getItem("nickname")) {
+        this.username = JSON.parse(localStorage.getItem("userInfo")).username;
         this.isCollection = !this.isCollection;
         if (this.isCollection) {
           this.$api
@@ -54,7 +56,7 @@ export default {
               // 添加收藏的时候
               // 本地储存收藏的商品
               this.$utils.saveHistory({
-                key: "collection",
+                key: `${this.username}collection`,
                 data: this.good,
                 attr: "id",
               });
@@ -67,7 +69,7 @@ export default {
               // console.log(res);
               // 本地删除记录
               this.$utils.delHistoryOne({
-                key: "collection",
+                key: `${this.username}collection`,
                 value: this.good,
                 id: "id",
               });

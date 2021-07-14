@@ -63,12 +63,6 @@ export default {
     //  查看详情
     goodOne(val) {
       // console.log(val);
-      Toast.loading({
-        message: "加载中...",
-        forbidClick: true,
-        loadingType: "spinner",
-        duration: "1000",
-      });
       //  传递参数
       this.$router.push({
         path: "/Details",

@@ -1893,3 +1893,80 @@ name: "MongoError"
 pid: 14472
 hostname: LAPTOP-CMJMK97D
 
+2021-07-14 10:12:30,002 ERROR 16268 [-/127.0.0.1/-/7ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ '238bc2e023844769a6b67d9a4c04b2ea': '' }" at path "cid" for model "ShopList"
+    at new CastError (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+message: "Cast to string failed for value \"{ '238bc2e023844769a6b67d9a4c04b2ea': '' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ '238bc2e023844769a6b67d9a4c04b2ea': '' }\""
+kind: "string"
+value: {"238bc2e023844769a6b67d9a4c04b2ea":""}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 16268
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 10:13:02,948 ERROR 16268 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ '238bc2e023844769a6b67d9a4c04b2ea': '' }" at path "cid" for model "ShopList"
+    at new CastError (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+message: "Cast to string failed for value \"{ '238bc2e023844769a6b67d9a4c04b2ea': '' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ '238bc2e023844769a6b67d9a4c04b2ea': '' }\""
+kind: "string"
+value: {"238bc2e023844769a6b67d9a4c04b2ea":""}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 16268
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 13:39:00,920 ERROR 18744 nodejs.ClusterClientNoResponseError: client no response in 3961074ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\cluster-client\lib\leader.js:77:23)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)
+name: "ClusterClientNoResponseError"
+pid: 18744
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 13:58:50,820 ERROR 16268 [-/127.0.0.1/-/7ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 16268
+hostname: LAPTOP-CMJMK97D
+

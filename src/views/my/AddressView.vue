@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="p-10 t-a-c font-s-16 flex jcsb bgc-gray">
-      <div><i class="iconfont icon-zuojiantou" @click="goback"></i></div>
+      <div @click="goback">
+        <i class="iconfont icon-zuojiantou"></i>&nbsp;我的
+      </div>
       <div>收货地址列表</div>
       <div></div>
     </div>

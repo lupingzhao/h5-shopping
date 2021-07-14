@@ -23,9 +23,10 @@ export default {
   components: { MyHead, GoodsCard },
   methods: {},
   mounted() {
+    let username = JSON.parse(localStorage.getItem("userInfo"));
+    username = username.username;
     // 获取记录
-    this.data = this.$utils.getHistory({ key: "collection" });
-    // console.log(this.data);
+    this.data = this.$utils.getHistory({ key: `${username}collection` });
   },
   computed: {},
   watch: {},

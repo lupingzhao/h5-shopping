@@ -43,23 +43,23 @@
           <van-tabbar-item replace>
             <div class="t-a-c">
               <div class="iconfont icon-daifahuo mb-10 icon2"></div>
-              代发货
+              待发货
             </div>
           </van-tabbar-item>
 
           <van-tabbar-item replace>
-            <van-badge :content="10">
-              <div class="t-a-c">
-                <div class="iconfont icon-baoguo mb-10 icon2"></div>
-                待收货
-              </div>
-            </van-badge>
+            <div class="t-a-c">
+              <div class="iconfont icon-baoguo mb-10 icon2"></div>
+              待收货
+            </div>
           </van-tabbar-item>
           <van-tabbar-item @click="go('/Comment')">
-            <div class="t-a-c">
-              <div class="iconfont icon-pingjia mb-10 icon2"></div>
-              待评价
-            </div>
+            <van-badge :content="total">
+              <div class="t-a-c">
+                <div class="iconfont icon-pingjia mb-10 icon2"></div>
+                待评价
+              </div>
+            </van-badge>
           </van-tabbar-item>
         </van-tabbar>
       </div>
@@ -99,7 +99,6 @@
 </template>
 
 <script>
-import { Notify } from "vant";
 import FootNav from "../../components/footnav/FootNav.vue";
 export default {
   name: "",
@@ -107,6 +106,7 @@ export default {
   data() {
     return {
       userInfo: null,
+      total: "",
     };
   },
   components: { FootNav },
@@ -121,12 +121,14 @@ export default {
         .loginOut()
         .then((res) => {
           // 成功通知
-          Notify({ type: "success", message: "退出成功" });
+          this.$Toast("退出成功");
         })
         .catch();
       this.$router.push("/");
       this.$store.commit("setNickname", null);
-      localStorage.clear();
+      localStorage.removeItem("nickname");
+      localStorage.removeItem("userInfo");
+      localStorage.removeItem("carNum");
     },
     // 跳转路由
     go(val) {
@@ -139,9 +141,21 @@ export default {
         this.$Toast("未登录");
       }
     },
+    // 评价的角标
+    // 未评价接口
+    no() {
+      this.$api
+        .tobeEvaluated()
+        .then((res) => {
+          this.total = res.data.count;
+          console.log(11);
+        })
+        .catch();
+    },
   },
   mounted() {
     this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    this.userInfo ? this.no() : "";
   },
   computed: {
     name() {

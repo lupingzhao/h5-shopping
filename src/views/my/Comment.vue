@@ -18,6 +18,25 @@
         finished-text="没有更多了"
         @load="onLoad"
       >
+        <van-tab title="待评价" :badge="toTotal">
+          <div
+            v-for="(item1, index1) in tobeEvaluated"
+            :key="index1"
+            class="goodsBox flex a-i-fs"
+          >
+            <div @click="goDetail('/Details', item1.cid)">
+              <img :src="item1.image_path" alt="" class="goodImg" />
+            </div>
+            <div>
+              <div>{{ item1.name }}</div>
+
+              <div class="flex share red" @click="go('/PublishComment', item1)">
+                <i class="iconfont icon-pingjia"></i>
+                <div class="pl-10">评论晒单</div>
+              </div>
+            </div>
+          </div>
+        </van-tab>
         <van-tab title="已评价">
           <!-- 已评价 -->
           <div
@@ -44,25 +63,6 @@
             </div>
           </div>
         </van-tab>
-        <van-tab title="待评价">
-          <div
-            v-for="(item1, index1) in tobeEvaluated"
-            :key="index1"
-            class="goodsBox flex a-i-fs"
-          >
-            <div @click="goDetail('/Details', item1.cid)">
-              <img :src="item1.image_path" alt="" class="goodImg" />
-            </div>
-            <div>
-              <div>{{ item1.name }}</div>
-
-              <div class="flex share red" @click="go('/PublishComment', item1)">
-                <i class="iconfont icon-pingjia"></i>
-                <div class="pl-10">评论晒单</div>
-              </div>
-            </div>
-          </div>
-        </van-tab>
       </van-list>
     </van-tabs>
   </div>
@@ -83,6 +83,8 @@ export default {
       total: 0,
       // 当前点击的标签
       index: 0,
+      // 未评价角标
+      toTotal: 0,
     };
   },
   components: {},
@@ -134,6 +136,7 @@ export default {
         .tobeEvaluated(this.page)
         .then((res) => {
           this.total = res.data.count;
+          this.toTotal = res.data.count;
           this.tobeEvaluated = this.tobeEvaluated.concat(res.data.list);
           this.page++;
           // 加载状态结束
@@ -150,16 +153,16 @@ export default {
       // console.log(this.index);
       if (this.page === 1) {
         if (this.index === 0) {
-          this.yes();
-        } else {
           this.no();
+        } else {
+          this.yes();
         }
       } else {
         setTimeout(() => {
           if (this.index === 0) {
-            this.yes();
-          } else {
             this.no();
+          } else {
+            this.yes();
           }
         }, 1000);
       }
@@ -168,6 +171,7 @@ export default {
     change(index) {
       this.page = 1;
       this.total = 0;
+      // 当前点击的下标
       this.index = index;
       // 加载数据中
       this.loading = true;
@@ -203,7 +207,7 @@ export default {
     height: 100px;
 
     .share {
-      width: 100px;
+      width: fit-content;
       text-align: center;
 
       font-size: 12px;

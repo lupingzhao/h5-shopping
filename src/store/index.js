@@ -5,7 +5,8 @@ Vue.use(Vuex)
 // 共享数据
 export default new Vuex.Store({
   state: {
-    carNum: localStorage.getItem('carNum'),
+
+    carNum: localStorage.getItem("userInfo") ? localStorage.getItem(`${JSON.parse(localStorage.getItem("userInfo")).username}carNum`) : '',
     address: null,
     nickname: localStorage.getItem('nickname'),
     // 

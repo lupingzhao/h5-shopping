@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { Switch } from '_vant@2.12.23@vant'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
@@ -203,8 +204,24 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
-  next()
+  document.title = to.meta.title;
+  //  有些页面必须登陆才能访问 防止用户直接在地址栏输入地址可以访问
+  // console.log(to.path);
+  switch (to.path) {
+    case '/History':
+    case '/AddressView':
+    case '/Collection':
+    case '/AllOrder':
+    case '/Comment':
+    case '/ToOrder':
+    case '/Personal':
+      JSON.parse(localStorage.getItem('userInfo')) ? next() : next('/')
+      break;
+    default:
+      next()
+      break;
+  }
+  // next()
 })
 
 export default router

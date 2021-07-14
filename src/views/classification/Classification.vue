@@ -103,6 +103,7 @@ export default {
     // 一级导航切换事件 默认商品显示页面
     onChange(index) {
       this.activeKey = index;
+      this.active = 0;
       // console.log(index);
       let a = this.level2[this.activeKey][0].mallSubId;
       this.onClick(a);

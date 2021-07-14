@@ -82,7 +82,6 @@ export default {
   methods: {
     // 获取搜索记录
     getHistroy() {
-      this.username = JSON.parse(localStorage.getItem("userInfo")).username;
       // 登陆获取用户的搜索记录
       if (this.username) {
         this.historydata = JSON.parse(
@@ -173,6 +172,9 @@ export default {
     },
   },
   mounted() {
+    localStorage.getItem("userInfo")
+      ? (this.username = JSON.parse(localStorage.getItem("userInfo")).username)
+      : "";
     this.getHistroy();
   },
   computed: {},
