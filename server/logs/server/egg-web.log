@@ -834,3 +834,20 @@
 2021-07-14 20:01:57,767 WARN 18668 [ClusterClient:Watcher] follower closed, and try to init it again
 2021-07-14 20:05:27,900 WARN 18668 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
 2021-07-14 20:05:27,901 WARN 18668 [ClusterClient:Watcher] follower closed, and try to init it again
+2021-07-15 08:45:18,102 INFO 19844 [egg:logger] init all loggers with options: {"dir":"D:\\代码存放\\课得在线\\vueProject_1\\h5-shopping\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2021-07-15 08:45:18,127 INFO 19844 [egg-multipart] stream mode enable
+2021-07-15 08:45:18,526 INFO 19844 [egg-mongoose] connecting mongodb://127.0.0.1/shoppingMall
+2021-07-15 08:45:18,863 INFO 19844 [egg-static] starting static serve /public/ -> D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\public
+2021-07-15 08:45:18,867 INFO 19844 [egg-security] use methodnoallow middleware
+2021-07-15 08:45:18,868 INFO 19844 [egg-security] use noopen middleware
+2021-07-15 08:45:18,868 INFO 19844 [egg-security] use nosniff middleware
+2021-07-15 08:45:18,869 INFO 19844 [egg-security] use xssProtection middleware
+2021-07-15 08:45:18,869 INFO 19844 [egg-security] use xframe middleware
+2021-07-15 08:45:18,870 INFO 19844 [egg-security] use dta middleware
+2021-07-15 08:45:18,870 INFO 19844 [egg-security] compose 6 middlewares into one security middleware
+2021-07-15 08:45:18,897 INFO 19844 [egg:core] dump config after load, 5ms
+2021-07-15 08:45:18,904 INFO 19844 [egg-mongoose] starting...
+2021-07-15 08:45:18,964 INFO 19844 [egg-mongoose] mongodb://127.0.0.1/shoppingMall connected successfully
+2021-07-15 08:45:18,973 INFO 19844 [egg-mongoose] instance[0] start successfully
+2021-07-15 08:45:18,979 INFO 19844 [egg-watcher:application] watcher start success
+2021-07-15 08:45:18,989 INFO 19844 [egg:core] dump config after ready, 8ms
