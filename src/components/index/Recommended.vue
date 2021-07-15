@@ -2,7 +2,7 @@
   <!-- 推荐 -->
   <div class="container">
     <div class="p-10 bor-b">推荐</div>
-    <div ref="wrapper" class="wrapper">
+    <div ref="wrapper" class="wrapper bor-b">
       <div class="flex" style="flex: 1">
         <div
           v-for="(item, index) in recommended"

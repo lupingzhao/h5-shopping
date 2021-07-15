@@ -51,6 +51,7 @@
       <van-index-bar
         highlight-color="rgb(212, 152, 39)"
         :index-list="Object.keys(citys.data.cities)"
+        :sticky-offset-top="125"
       >
         <div
           v-for="(keys, index) in Object.keys(citys.data.cities)"

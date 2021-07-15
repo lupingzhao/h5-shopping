@@ -26,11 +26,12 @@
               <div v-if="checked">取消全选</div>
               <div v-else>全选</div>
             </div>
-            <div>
-              <div class="p-tb-10">
-                合计: <span class="font-c-red">{{ sum }}</span>
+            <div class="t-a-r p-2 width-order">
+              <div class="p-tb-10 flex">
+                <div class="pr-10">合计:</div>
+                <div class="font-c-red width-sum t-a-l">{{ sum }}</div>
               </div>
-              <div>
+              <div class="pr-10">
                 <van-button type="primary" size="small" @click="goOrder"
                   >去结算</van-button
                 >
@@ -62,11 +63,15 @@
                 <div class="p-10 width-100">
                   <div class="name">{{ item.name }}</div>
                   <div class="p-tb-10 flex jcsb">
-                    <div class="font-c-red">￥ {{ item.mallPrice }}</div>
+                    <div class="font-c-red">
+                      ￥ {{ item.mallPrice }}
+                      <div class="font-c-red p-2 font-s-12">每人限购50份</div>
+                    </div>
                     <div>
                       <van-stepper
                         v-model="item.count"
                         @change="stechange(item)"
+                        max="50"
                       />
                     </div>
                   </div>
@@ -293,6 +298,12 @@ export default {
   padding-bottom: 50px;
   .van-button--primary {
     margin-right: 15px;
+  }
+  .width-order {
+    width: 40%;
+    .width-sum {
+      width: 60%;
+    }
   }
 }
 .title {

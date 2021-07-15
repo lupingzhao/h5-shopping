@@ -84,7 +84,7 @@ export default {
       // 当前点击的标签
       index: 0,
       // 未评价角标
-      toTotal: 0,
+      toTotal: null,
     };
   },
   components: {},
@@ -137,6 +137,7 @@ export default {
         .then((res) => {
           this.total = res.data.count;
           this.toTotal = res.data.count;
+          this.toTotal === 0 ? (this.toTotal = null) : this.toTotal;
           this.tobeEvaluated = this.tobeEvaluated.concat(res.data.list);
           this.page++;
           // 加载状态结束

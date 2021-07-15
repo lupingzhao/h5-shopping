@@ -51,7 +51,7 @@ export default {
         if (this.$store.state.carNum > 0) {
           return this.$store.state.carNum;
         } else {
-          return 0;
+          return;
         }
       } else {
         return;

@@ -148,7 +148,7 @@ export default {
         .tobeEvaluated()
         .then((res) => {
           this.total = res.data.count;
-          console.log(11);
+          this.total === 0 ? (this.total = null) : this.total;
         })
         .catch();
     },
