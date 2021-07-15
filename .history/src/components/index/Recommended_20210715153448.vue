@@ -169,8 +169,8 @@ export default {
       border-bottom-left-radius: 5px;
       height: 20px;
       background-color: rgb(254, 202, 58);
-      .icon-xiazai1 {
-        font-size: 22px !important;
+      .iconfont {
+        font-size: 15px !important;
       }
     }
 
@@ -178,7 +178,7 @@ export default {
       height: 20px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      font-size: 14px;
+      font-size: 12px;
       padding: 10px;
       background-image: linear-gradient(to right, #ff6034, #ee0a24);
     }

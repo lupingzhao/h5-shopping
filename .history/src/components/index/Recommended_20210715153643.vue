@@ -178,7 +178,7 @@ export default {
       height: 20px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      font-size: 14px;
+      font-size: 16px;
       padding: 10px;
       background-image: linear-gradient(to right, #ff6034, #ee0a24);
     }

@@ -170,7 +170,7 @@ export default {
       height: 20px;
       background-color: rgb(254, 202, 58);
       .icon-xiazai1 {
-        font-size: 22px !important;
+        font-size: 16px !important;
       }
     }
 
