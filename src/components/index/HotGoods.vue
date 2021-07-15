@@ -13,7 +13,7 @@
         class="width-49 border-b box"
         :class="{ 'border-r': index % 2 === 0 }"
       >
-        <img :src="item.image" alt="" class="img" />
+        <img v-lazy="item.image" alt="" class="img" />
         <div class="p-5 name">{{ item.name }}</div>
         <div class="m-tb-10 p-2">
           <span class="font-c-red">￥{{ item.mallPrice }} &nbsp;</span>

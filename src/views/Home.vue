@@ -7,7 +7,7 @@
           <template #left>
             <div class="flex jcsb" v-if="boo2">
               <van-loading type="spinner" v-if="boo" />
-              <div class="ellipsis t-a-c mr-5" @click="getAddress">
+              <div class="ellipsis t-a-c mr-5" @click="getAddress" v-else>
                 {{ address }}
               </div>
               <div @click="Switch">
@@ -186,7 +186,8 @@ export default {
           // console.log(data.addressComponent.city);
           _this.address = data.addressComponent.city;
           _this.boo = false;
-          localStorage.removeItem("address");
+          localStorage.setItem("address", _this.address);
+          _this.$store.commit("setAddress", _this.address);
         }
         function onError(data) {
           // 定位出错
@@ -194,18 +195,14 @@ export default {
           _this.address = "失败...";
           _this.boo = false;
           localStorage.setItem("address", _this.address);
-          // this.$store.commit('mutationHandler', payload);
+          this.$store.commit("setAddress", _this.address);
+          st;
         }
       });
     },
     // 位置选择
     Switch() {
-      this.$router.push({
-        name: "SwithAdderss",
-        params: {
-          now: this.address,
-        },
-      });
+      this.$router.push("SwithAdderss");
     },
     // 调用子组件的方法
     seach() {
@@ -235,7 +232,8 @@ export default {
   },
   mounted() {
     this.getData();
-    // 是否有手动选择地址
+
+    // // 是否有手动选择地址
     let adrs = localStorage.getItem("address");
 
     if (adrs !== null) {
@@ -252,6 +250,10 @@ export default {
       if (oldval !== "") {
         this.boo3 = true;
       }
+    },
+    // 地址
+    address() {
+      return this.$store.state.address;
     },
   },
 };

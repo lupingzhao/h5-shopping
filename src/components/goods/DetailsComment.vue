@@ -9,7 +9,7 @@
     </van-sticky>
 
     <!-- x详情  -->
-    <div class="m-t-10">
+    <div class="m-t-10" style="line-height: 0">
       <div v-html="detail.detail" v-if="active === 0"></div>
       <!-- 评论 -->
       <div v-else>
@@ -123,6 +123,6 @@ export default {
   background-color: #fff;
 }
 .dc {
-  padding-bottom: 15vw;
+  padding-bottom: 5vw;
 }
 </style>

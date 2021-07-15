@@ -193,6 +193,16 @@ const routes = [
       index: '/text'
     }
   },
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('../views/404'),
+    meta: {
+      title: '网址错误',
+      index: '/404'
+    }
+  },
 
 
 ]
@@ -215,6 +225,10 @@ router.beforeEach((to, from, next) => {
     case '/Comment':
     case '/ToOrder':
     case '/Personal':
+    case '/ViewComment':
+    case '/PublishComment':
+    case '/EditAddress':
+    case '/ViewComment':
       JSON.parse(localStorage.getItem('userInfo')) ? next() : next('/')
       break;
     default:

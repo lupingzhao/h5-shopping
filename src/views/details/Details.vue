@@ -1,7 +1,7 @@
 <template>
-  <div v-if="good" class="good height-100">
+  <div>
     <loading v-if="loading"></loading>
-    <div v-else>
+    <div v-else class="good height-100">
       <div class="goback flex" @click="back">
         <i class="iconfont icon-zuojiantou"></i>
       </div>
@@ -101,9 +101,10 @@ export default {
             // console.log(res);
             this.comment = res.goods.comment;
             this.good = res.goods.goodsOne;
-            this.loading = false;
+
             // console.log(this.good);
             if (this.good) {
+              this.loading = false;
               this.detail = {
                 detail: this.good.detail,
               };

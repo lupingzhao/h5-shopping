@@ -1960,3 +1960,117 @@ hostname: LAPTOP-CMJMK97D
 pid: 16268
 hostname: LAPTOP-CMJMK97D
 
+2021-07-14 14:55:57,288 ERROR 18668 [-/127.0.0.1/-/6ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 14:56:16,130 ERROR 18668 [-/127.0.0.1/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 14:56:34,567 ERROR 18668 [-/127.0.0.1/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 14:57:24,226 ERROR 18668 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 15:05:00,383 ERROR 18668 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+
+2021-07-14 15:05:11,566 ERROR 18668 [-/127.0.0.1/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\app\middleware\isLogin.js:15:13
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-bodyparser\index.js:86:5)
+    at async D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\koa-static-cache\index.js:51:63
+    at async notfound (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\代码存放\课得在线\vueProject_1\h5-shopping\server\node_modules\egg\app\middleware\meta.js:12:5)
+
+pid: 18668
+hostname: LAPTOP-CMJMK97D
+

@@ -13,70 +13,71 @@
     </div>
 
     <!-- 城市列表 -->
+    <van-sticky :offset-top="50">
+      <div v-if="!value" class="mt">
+        <div>
+          <div class="p-10 font-s-14">当前城市</div>
+          <div class="bgc-white p-10">
+            <van-button
+              type="default"
+              size="small"
+              class="now"
+              @click="switchAdress(now)"
+            >
+              {{ now }}</van-button
+            >
+          </div>
 
-    <div v-if="!value" class="mt">
-      <div>
-        <div class="p-10 font-s-14">当前城市</div>
-        <div class="bgc-white p-10">
-          <van-button
-            type="default"
-            size="small"
-            class="now"
-            @click="switchAdress(now)"
-          >
-            {{ now }}</van-button
-          >
+          <div class="p-10 font-s-14">热门城市</div>
+          <div class="bgc-white flex flex-wrap jcsb p-lr-15">
+            <van-button
+              class="now hot"
+              v-for="(item, index) in this.citys.data.hotCities"
+              :key="index"
+              type="default"
+              size="small"
+              @click="switchAdress(item.name)"
+              >{{ item.name }}</van-button
+            >
+          </div>
         </div>
 
-        <div class="p-10 font-s-14">热门城市</div>
-        <div class="bgc-white flex flex-wrap jcsb p-lr-15">
-          <van-button
-            class="now hot"
-            v-for="(item, index) in this.citys.data.hotCities"
-            :key="index"
-            type="default"
-            size="small"
-            @click="switchAdress(item.name)"
-            >{{ item.name }}</van-button
-          >
-        </div>
-      </div>
-
-      <!-- 循环对象 -->
-      <!-- <div v-for="(value, keys, index) in this.citys.data.cities" :key="index">
+        <!-- 循环对象 -->
+        <!-- <div v-for="(value, keys, index) in this.citys.data.cities" :key="index">
         <div>{{ keys }}</div>
         <div v-for="(item, index1) in value" :key="index1">{{ item.name }}</div>
       </div> -->
 
-      <van-index-bar
-        highlight-color="rgb(212, 152, 39)"
-        :index-list="Object.keys(citys.data.cities)"
-      >
-        <div
-          v-for="(keys, index) in Object.keys(citys.data.cities)"
-          :key="keys"
+        <van-index-bar
+          highlight-color="rgb(212, 152, 39)"
+          :index-list="Object.keys(citys.data.cities)"
         >
-          <van-index-anchor :index="keys" />
-          <van-cell
-            v-for="(item1, index1) in Object.values(citys.data.cities)[index]"
-            :key="index1"
-            :title="item1.name"
-            @click="switchAdress(item1.name)"
-          />
-        </div>
-      </van-index-bar>
-    </div>
-    <!-- 搜索时出现 -->
-    <div v-else class="bgc-white p-10 mt">
-      <div
-        v-for="item in seach"
-        :key="item"
-        class="p-10"
-        @click="switchAdress(item)"
-      >
-        {{ item }}
+          <div
+            v-for="(keys, index) in Object.keys(citys.data.cities)"
+            :key="keys"
+          >
+            <van-index-anchor :index="keys" />
+            <van-cell
+              v-for="(item1, index1) in Object.values(citys.data.cities)[index]"
+              :key="index1"
+              :title="item1.name"
+              @click="switchAdress(item1.name)"
+            />
+          </div>
+        </van-index-bar>
       </div>
-    </div>
+      <!-- 搜索时出现 -->
+      <div v-else class="bgc-white p-10 mt">
+        <div
+          v-for="item in seach"
+          :key="item"
+          class="p-10"
+          @click="switchAdress(item)"
+        >
+          {{ item }}
+        </div>
+      </div>
+    </van-sticky>
   </div>
 </template>
 

@@ -33,7 +33,7 @@ export default {
 .box {
   background-color: #f5f5f5;
   .left {
-    width: 18%;
+    width: 20%;
     text-align: center;
   }
   .middle {

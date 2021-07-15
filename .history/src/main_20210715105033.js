@@ -7,7 +7,7 @@ import store from './store'
 import FootNav from './components/footnav/FootNav'
 
 import Vant from 'vant';
-import 'vant/lib/index.css';
+
 
 import api from './http/api';
 import publicJs from './publicJs/com';

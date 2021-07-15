@@ -13,7 +13,6 @@
     </div>
 
     <!-- 城市列表 -->
-
     <div v-if="!value" class="mt">
       <div>
         <div class="p-10 font-s-14">当前城市</div>

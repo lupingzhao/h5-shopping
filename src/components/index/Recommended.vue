@@ -10,7 +10,7 @@
           class="recomen"
           @click="goodOne(item.goodsId)"
         >
-          <img :src="item.image" alt="" class="img" />
+          <img alt="" class="img" v-lazy="item.image" />
           <div class="ellipsis namegood">{{ item.goodsName }}</div>
           <div class="m-tb-10">
             <span>￥{{ item.mallPrice }}</span>

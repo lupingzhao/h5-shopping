@@ -13,7 +13,6 @@
     </div>
 
     <!-- 城市列表 -->
-
     <div v-if="!value" class="mt">
       <div>
         <div class="p-10 font-s-14">当前城市</div>
@@ -48,10 +47,7 @@
         <div v-for="(item, index1) in value" :key="index1">{{ item.name }}</div>
       </div> -->
 
-      <van-index-bar
-        highlight-color="rgb(212, 152, 39)"
-        :index-list="Object.keys(citys.data.cities)"
-      >
+      <van-index-bar highlight-color="rgb(212, 152, 39)">
         <div
           v-for="(keys, index) in Object.keys(citys.data.cities)"
           :key="keys"

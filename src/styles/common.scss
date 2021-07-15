@@ -94,9 +94,14 @@
     width: 20%;
 }
 
+.width-fit {
+    width: fit-content;
+}
+
 .height-100 {
     height: 100%;
 }
+
 
 /* 居中 */
 .m-c {
@@ -466,4 +471,25 @@
     /*自定义滚动条的伪对象选择器, CSS 可以隐藏滚动条*/
     &::-webkit-scrollbar {
         display: none;
-    }}
+    }
+}
+
+// 用边框画三角形
+.triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 100px solid red;
+    border-left: 100px solid transparent;
+}
+
+// 让外层盒子撑满屏幕 并且内容居中
+.div-center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

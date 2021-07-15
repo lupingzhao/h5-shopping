@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
 
     carNum: localStorage.getItem("userInfo") ? localStorage.getItem(`${JSON.parse(localStorage.getItem("userInfo")).username}carNum`) : '',
-    address: null,
+    address: localStorage.getItem('address'),
     nickname: localStorage.getItem('nickname'),
     // 
   },
@@ -19,6 +19,10 @@ export default new Vuex.Store({
     // 修改用户数据
     setNickname(state, data) {
       state.nickname = data
+    },
+    // 修改地址
+    setAddress(state, data) {
+      state.address = data
     }
   },
   actions: {
