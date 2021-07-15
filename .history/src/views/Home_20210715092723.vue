@@ -5,9 +5,9 @@
       <van-sticky :offset-top="0">
         <head-child class="head flex">
           <template #left>
-            <div class="flex jcc t-a-c" v-if="boo2">
+            <div class="flex jcsb" v-if="boo2">
               <van-loading type="spinner" v-if="boo" />
-              <div class="ellipsis mr-5" @click="getAddress" v-else>
+              <div class="ellipsis t-a-c mr-5" @click="getAddress" v-else>
                 {{ address }}
               </div>
               <div @click="Switch">
