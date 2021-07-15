@@ -1,7 +1,7 @@
 <template>
   <div class="pos-rel">
     <div class="fixed">
-      <div class="p-10 flex pos-rel bgc-white border-b">
+      <div class="flex pos-rel bgc-white border-b">
         <div class="iconfont" @click="back">
           <i class="iconfont icon-zuojiantou"></i>
         </div>
@@ -51,7 +51,6 @@
       <van-index-bar
         highlight-color="rgb(212, 152, 39)"
         :index-list="Object.keys(citys.data.cities)"
-        :sticky-offset-top="125"
       >
         <div
           v-for="(keys, index) in Object.keys(citys.data.cities)"
@@ -67,6 +66,7 @@
         </div>
       </van-index-bar>
     </div>
+
     <!-- 搜索时出现 -->
     <div v-else class="bgc-white p-10 mt">
       <div
@@ -163,8 +163,8 @@ export default {
   transform: translateX(-50%);
 }
 .ipt {
-  margin: 10px;
-  background-color: #f5f5f5;
+  padding: 10px;
+
   .van-search {
     width: 90%;
     padding: 0;

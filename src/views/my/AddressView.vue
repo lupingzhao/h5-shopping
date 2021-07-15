@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="p-10 t-a-c font-s-16 flex jcsb bgc-gray">
-      <div @click="goback">
-        <i class="iconfont icon-zuojiantou"></i>&nbsp;我的
-      </div>
+      <div @click="goback"><i class="iconfont icon-zuojiantou"></i></div>
       <div>收货地址列表</div>
       <div></div>
     </div>
@@ -70,7 +68,14 @@ export default {
   methods: {
     // 返回
     goback() {
-      this.$router.push("/My");
+      // 地址列表只能返回两个地方
+      // 判断是从地址管理过来还是支付页面过来
+      if (localStorage.getItem("toOder")) {
+        this.$router.push("/ToOrder");
+        localStorage.removeItem("toOder");
+      } else {
+        this.$router.push("/My");
+      }
     },
     // 添加地址
     onAdd() {

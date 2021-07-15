@@ -28,7 +28,7 @@
                 ></div>
               </div>
               <div class="m-l-10 width-100 p-5">
-                <div class="flex jcsb width-100">
+                <div class="flex jcsb width-100 p-tb-10">
                   <div>
                     <div v-if="item.anonymous">
                       {{ item.comment_nickname }}
@@ -45,9 +45,7 @@
               </div>
             </div>
             <!-- 内容 -->
-            <div class="p-5 ellipsis-4">
-              {{ item.content }}
-            </div>
+            <div class="content">hhh {{ item.content }}</div>
           </div>
         </div>
 
@@ -112,17 +110,21 @@ export default {
 .commbox {
   background-color: #fff;
   margin-bottom: 10px;
-  padding: 0 5px 5px;
-  height: 150px;
+  padding: 10px 5px 10px;
 }
 .com1 {
-  background: url("http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg");
-  background-size: contain;
+  background: url("../../assets/images/tx.webp");
+  background-size: 100%;
 }
 .tab {
   background-color: #fff;
 }
 .dc {
   padding-bottom: 5vw;
+}
+.content {
+  margin-top: 5px;
+  border-top: 1px solid rgb(214, 212, 212);
+  padding: 15px 10px 15px;
 }
 </style>

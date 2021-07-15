@@ -17,6 +17,13 @@
     top: 55% !important;
 }
 
+
+.van-index-anchor--sticky {
+    top: 25.267vw !important;
+
+}
+
+
 // 轮播图按钮颜色
 .my-swipe {
     .van-swipe__indicator {
@@ -35,6 +42,7 @@
 .class-tabs {
     .van-tab__pane {
         margin-top: 40px;
+
     }
 
     .van-tabs__nav {

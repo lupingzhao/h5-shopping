@@ -49,6 +49,7 @@ export default {
     // 返回
     goback() {
       this.$router.back();
+      localStorage.removeItem("id");
     },
     // 保存的事件
     onSave(AddressInfo) {
